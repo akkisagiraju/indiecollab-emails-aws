@@ -9,12 +9,6 @@ def get_app_db():
     table = dynamodb.Table('indiecollabemails')
     return table
 
-
-@app.route('/')
-def index():
-    return {'hello': 'world'}
-
-
 @app.route('/email', methods=['POST'], cors=True)
 def input_email():
     email_as_json = app.current_request.json_body
